@@ -1,0 +1,49 @@
+# Nmap 7.91 scan initiated Sat Jan  8 01:41:43 2022 as: nmap -o inferno.nmap inferno.thm
+Nmap scan report for inferno.thm (10.10.10.62)
+Host is up (0.70s latency).
+Not shown: 958 closed ports
+PORT      STATE SERVICE
+21/tcp    open  ftp
+22/tcp    open  ssh
+23/tcp    open  telnet
+25/tcp    open  smtp
+80/tcp    open  http
+88/tcp    open  kerberos-sec
+106/tcp   open  pop3pw
+110/tcp   open  pop3
+389/tcp   open  ldap
+443/tcp   open  https
+464/tcp   open  kpasswd5
+636/tcp   open  ldapssl
+777/tcp   open  multiling-http
+783/tcp   open  spamassassin
+808/tcp   open  ccproxy-http
+873/tcp   open  rsync
+1001/tcp  open  webpush
+1236/tcp  open  bvcontrol
+1300/tcp  open  h323hostcallsc
+2000/tcp  open  cisco-sccp
+2003/tcp  open  finger
+2121/tcp  open  ccproxy-ftp
+2601/tcp  open  zebra
+2602/tcp  open  ripd
+2604/tcp  open  ospfd
+2605/tcp  open  bgpd
+2607/tcp  open  connection
+2608/tcp  open  wag-service
+4224/tcp  open  xtell
+5051/tcp  open  ida-agent
+5432/tcp  open  postgresql
+5555/tcp  open  freeciv
+5666/tcp  open  nrpe
+6346/tcp  open  gnutella
+6566/tcp  open  sane-port
+6667/tcp  open  irc
+8021/tcp  open  ftp-proxy
+8081/tcp  open  blackice-icecap
+8088/tcp  open  radan-http
+9418/tcp  open  git
+10000/tcp open  snet-sensor-mgmt
+10082/tcp open  amandaidx
+
+# Nmap done at Sat Jan  8 01:41:47 2022 -- 1 IP address (1 host up) scanned in 4.65 seconds

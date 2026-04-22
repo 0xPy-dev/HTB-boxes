@@ -1,0 +1,6 @@
+smtp-user-enum -U /usr/share/wordlists/usernames.txt -t goldeneye.thm
+...
+exists16.40: backup
+exists16.40: bin
+exists16.40: boris
+exists16.40: natalya

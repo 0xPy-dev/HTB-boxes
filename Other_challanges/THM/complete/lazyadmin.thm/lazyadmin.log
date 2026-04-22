@@ -1,0 +1,29 @@
+1. Enumerate ports
+    ...
+
+2. Enumerate dirs
+    ...
+    content/ [301]
+
+3. Exploitation SweetRice CMS
+    # cat /content/inc/mysql_backup.1.5.1.sql
+    ...
+    Creds: { manager:Password123 }
+    Login in CMS
+    Create shell (http://lazyadmin.thm/content/as/?type=ad)
+    Start php file (http://10.10.94.109/content/inc/ads/file.php)
+    And get reverse shell! :)
+
+4. Privilege escalation (root)
+    $ whoami
+    www-data
+    $ sudo -l
+    (ALL) NOPASSWD: /usr/bin/perl /home/itguy/backup.pl
+    $ cat /home/itguy/backup.pl
+        #!/usr/bin/perl
+        system("sh", "/etc/copy.sh");
+    $ ls -la /etc/copy.sh
+    -rw-r--rwx 1 root root 81 Nov 29  2019 /etc/copy.sh
+    Write in /etc/copy.sh my payload
+    Bingo! I get root shell! Again... :P
+Thanks!

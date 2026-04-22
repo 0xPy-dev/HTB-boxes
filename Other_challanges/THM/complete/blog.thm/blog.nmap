@@ -1,0 +1,11 @@
+# Nmap 7.91 scan initiated Wed Jun  2 17:41:53 2021 as: nmap -o blog.nmap blog.thm
+Nmap scan report for blog.thm (10.10.40.8)
+Host is up (0.85s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE
+22/tcp  open  ssh
+80/tcp  open  http
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+# Nmap done at Wed Jun  2 17:41:57 2021 -- 1 IP address (1 host up) scanned in 5.01 seconds

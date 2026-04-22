@@ -1,0 +1,57 @@
+# Nmap 7.91 scan initiated Sat Jul 10 19:37:37 2021 as: nmap -sC -sV -A -o coldvvars_tcp.nmap coldvvars.thm
+Nmap scan report for coldvvars.thm (10.10.242.186)
+Host is up (0.064s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE     VERSION
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 4.7.6-Ubuntu (workgroup: WORKGROUP)
+8080/tcp open  http        Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+8082/tcp open  http        Node.js Express framework
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=7/10%OT=139%CT=1%CU=30280%PV=Y%DS=2%DC=T%G=Y%TM=60E9CC
+OS:FD%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=A)OP
+OS:S(O1=M505ST11NW6%O2=M505ST11NW6%O3=M505NNT11NW6%O4=M505ST11NW6%O5=M505ST
+OS:11NW6%O6=M505ST11)WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)EC
+OS:N(R=Y%DF=Y%T=40%W=F507%O=M505NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=
+OS:AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(
+OS:R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%
+OS:F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N
+OS:%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%C
+OS:D=S)
+
+Network Distance: 2 hops
+Service Info: Host: INCOGNITO
+
+Host script results:
+|_clock-skew: mean: -15s, deviation: 1s, median: -15s
+|_nbstat: NetBIOS name: INCOGNITO, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.7.6-Ubuntu)
+|   Computer name: incognito
+|   NetBIOS computer name: INCOGNITO\x00
+|   Domain name: \x00
+|   FQDN: incognito
+|_  System time: 2021-07-10T16:38:02+00:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-07-10T16:38:04
+|_  start_date: N/A
+
+TRACEROUTE (using port 23/tcp)
+HOP RTT      ADDRESS
+1   66.07 ms 10.8.0.1
+2   64.68 ms coldvvars.thm (10.10.242.186)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Jul 10 19:38:22 2021 -- 1 IP address (1 host up) scanned in 45.80 seconds

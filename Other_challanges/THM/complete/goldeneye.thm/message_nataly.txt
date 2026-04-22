@@ -1,0 +1,13 @@
+Ok Natalyn I have a new student for you. As this is a new system please let me or boris know if you see any config issues, especially is it's related to security...even if it's not, just enter it in under the guise of "security"...it'll get the change order escalated without much hassle :)
+
+Ok, user creds are:
+
+username: xenia
+password: RCP90rulez!
+
+Boris verified her as a valid contractor so just create the account ok?
+
+And if you didn't have the URL on outr internal Domain: severnaya-station.com/gnocertdir
+**Make sure to edit your host file since you usually work remote off-network....
+
+Since you're a Linux user just point this servers IP to severnaya-station.com in /etc/hosts.

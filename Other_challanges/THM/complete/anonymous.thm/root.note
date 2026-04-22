@@ -1,0 +1,2 @@
+ls -la /usr/bin/env
+/usr/bin/env /bin/sh -p

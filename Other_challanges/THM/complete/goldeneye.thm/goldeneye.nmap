@@ -1,0 +1,22 @@
+# Nmap 7.91 scan initiated Thu Jun  3 23:34:35 2021 as: nmap -sC -sV -p 25,80,55006,55007 -o goldeneye.nmap goldeneye.thm
+Nmap scan report for goldeneye.thm (10.10.216.40)
+Host is up (0.066s latency).
+
+PORT      STATE SERVICE     VERSION
+25/tcp    open  smtp        Postfix smtpd
+|_smtp-commands: ubuntu, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+|_ssl-date: TLS randomness does not represent time
+80/tcp    open  http        Apache httpd 2.4.7 ((Ubuntu))
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+|_http-title: GoldenEye Primary Admin Server
+55006/tcp open  ssl/unknown
+| ssl-cert: Subject: commonName=localhost/organizationName=Dovecot mail server
+| Not valid before: 2018-04-24T03:23:52
+|_Not valid after:  2028-04-23T03:23:52
+|_ssl-date: TLS randomness does not represent time
+55007/tcp open  pop3        Dovecot pop3d
+|_pop3-capabilities: TOP RESP-CODES SASL(PLAIN) CAPA AUTH-RESP-CODE PIPELINING STLS UIDL USER
+|_ssl-date: TLS randomness does not represent time
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Jun  3 23:35:10 2021 -- 1 IP address (1 host up) scanned in 34.61 seconds

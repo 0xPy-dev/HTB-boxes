@@ -1,0 +1,9 @@
+# Nmap 7.91 scan initiated Fri Jan  7 22:18:26 2022 as: nmap -p- -o lazyadmin.nmap lazyadmin.thm
+Nmap scan report for lazyadmin.thm (10.10.121.224)
+Host is up (0.11s latency).
+Not shown: 65533 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Fri Jan  7 22:25:53 2022 -- 1 IP address (1 host up) scanned in 446.83 seconds

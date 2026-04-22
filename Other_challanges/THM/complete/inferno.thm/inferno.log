@@ -1,0 +1,40 @@
+1. Enumerate ports
+    ...
+
+2. Enumerate 80 port
+    ...
+    /inferno [200]
+
+3. Collect users:
+    # cewl http://inferno.thm/
+    Select users
+      admin
+      inferno
+      dante
+
+4. Brute basic auth(hydra)
+    # hydra -L users.txt -P ./wordlist.txt -f inferno.thm http-get /inferno -I
+    Creds: admin:dante1
+
+5. Exploit CMS Codiad:
+    Search writible PATH...
+    Create reverse_shell.php file !!!
+    And get reverse shell :)
+
+6. Privilege escalation(user1)
+    In config.php I not found nothing...
+    $ cd /home/dante/
+    Interesting file ~/Downloads/.download.dat
+    $ cat ~/Downloads/.download.dat
+    <HEX FILE>
+    Decrypt hex to raw online
+    Get creds of dante !
+    Creds: { dante:V1rg1l10h3lpm3}
+
+7. Privilege escalation (root)
+    dante$ sudo -l
+      (root) NOPASSWD: /usr/bin/tee
+    We can write to system files or root files !!!
+    Rewrite /etc/passwd and add new priv user.
+    And I get root! Again... :P
+Thanks!
