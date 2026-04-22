@@ -1,0 +1,6 @@
+ltrace ./level3
+...
+strcmp("1234\n", "snlprintf\n")
+...
+Passwd is snlprintf
+

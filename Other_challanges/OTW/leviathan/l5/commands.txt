@@ -1,0 +1,6 @@
+ltrace leviathan5
+...
+fopen("/tmp/file.log", "r")
+...
+Create link to my pass leviathan6
+ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
