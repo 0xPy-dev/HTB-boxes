@@ -1,0 +1,6 @@
+mkdir /tmp/Level29_Test
+cd /tmp/Level29_Test
+git clone ssh://bandit29-git@localhost/home/bandit29-git/repo ./
+git branch
+git checkout dev
+cat README.md

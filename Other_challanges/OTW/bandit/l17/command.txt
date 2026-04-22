@@ -1,0 +1,1 @@
+diff passwords.old passwords.new | sed -n 4p

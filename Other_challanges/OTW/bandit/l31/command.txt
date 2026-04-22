@@ -1,0 +1,8 @@
+mkdir /tmp/Level31_test
+cd /tmp/Level31_test
+git clone ssh://bandit31-git@localhost/home/bandit31-git/repo ./ # 47e603bb428404d265f59c42920d81e5
+echo 'May I come in?' > key.txt
+rm .gitignore
+git add key.txt
+git commit -m 'Text...'
+git push origin # 47e603bb428404d265f59c42920d81e5

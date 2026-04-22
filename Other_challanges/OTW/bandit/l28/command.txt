@@ -1,0 +1,6 @@
+mkdir /tmp/Level28_test/
+cd /tmp/Level28_test/
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo ./
+git log
+git diff 186a1038cc54d1358d42d468cdc8e3cc28a93fcb b67405defc6ef44210c53345fc953e6a21338cc7
+cat README.md

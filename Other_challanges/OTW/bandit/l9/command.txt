@@ -1,0 +1,1 @@
+strings data.txt | grep '=====' | cut -d' ' -f2

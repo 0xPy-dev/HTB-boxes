@@ -1,0 +1,2 @@
+openssl s_client -connect localhost:31790
+echo cluFn7wTiGryunymYOu4RcffSxQluehd

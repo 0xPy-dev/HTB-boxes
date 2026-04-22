@@ -1,0 +1,1 @@
+sort data.txt | uniq -c | grep '1 '

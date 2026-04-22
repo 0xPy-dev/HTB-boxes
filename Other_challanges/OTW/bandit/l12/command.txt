@@ -1,0 +1,2 @@
+zcat test | bzcat | zcat | tar -xO | tar -xO | bzcat | tar -xO | zcat | file -
+zcat test | bzcat | zcat | tar -xO | tar -xO | bzcat | tar -xO | zcat

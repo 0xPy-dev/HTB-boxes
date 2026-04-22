@@ -1,0 +1,12 @@
+mkdir /tmp/Level24_Test/
+cd /tmp/Level24_Test/
+#create wordlist
+#name: test.py
+#!/usr/bin/python2.7
+for i in range(0,10000):
+	i=str(i)
+	while len(i)<4:
+		i=(i[-1::-1]+'0')[-1::-1]
+        print("UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ "+i)
+python2.7 ./test.py > wordlist
+cat wordlist | nc localhost 30003 2>&1 | grep -v "Wrong!"

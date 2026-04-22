@@ -1,0 +1,1 @@
+find ./ -type f -group "bandit6" -user "bandit7" -size 33c 2>&1 | grep -v "Permission denied" 2>&1 | grep -v "No such file or directory"

@@ -1,0 +1,4 @@
+mkdir /tmp/LEVEL27_Test
+cd /tmp/LEVEL27_Test
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo 
+cat ./repo/README
