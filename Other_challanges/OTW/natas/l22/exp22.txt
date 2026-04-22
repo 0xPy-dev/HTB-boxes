@@ -1,0 +1,8 @@
+Use BurpSuite:
+	1. Target scope add (http://natas22.natas.labs.overthewire.org/)
+	2. Send request:
+		http://natas22.natas.labs.overthewire.org/revelio&admin=1
+	3. Skiping...
+	4. Target SiteMap Response:
+		... GET / ...
+Password: D0vlad33nQF0Hz2EP255TP5wSW9ZsRSE
